@@ -1,28 +1,24 @@
 # Calendar
-Short description and motivation.
-
-## Usage
-How to use my plugin.
+Camaleon CMS calendar plugin
 
 ## Installation
-Add this line to your application's Gemfile:
-
+Clone into `apps/plugins` and add plugin paths to your project Gemfile:
 ```ruby
-gem 'calendar'
+# ...end of your Gemfile
+require './lib/plugin_routes' 
+instance_eval(PluginRoutes.draw_gems)
+# ...
+gem 'calendar', path: 'apps/plugins/calendar'
 ```
 
-And then execute:
-```bash
-$ bundle
-```
+## Usage
 
-Or install it yourself as:
-```bash
-$ gem install calendar
-```
+You can render your calendar partial with `[calendar_view]` shortcode anywhere you want.
+Set up you preferred post type to be used as post source for the plugin and then navigate / link to `/calendar?m=[date]`, where date follows the `yearmonthday` format. For example:
 
-## Contributing
-Contribution directions go here.
+ - `2019` will show posts just from the entire 2019
+ - `201906` will query for posts in June 2019
+ - `20190629` will show posts from June 29 2019
 
-## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This was coded as an emergency solution so it's not recommended to be used in production unless heavily modified and tested.
+Be sure to modify your base calendar view @ `/app/views/plugins/calendar/front/index.html.erb` in order to properly render your posts.

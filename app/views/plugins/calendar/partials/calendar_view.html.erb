@@ -1,0 +1,21 @@
+<%
+  month = [nil,'Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентярь','Октябрь','Ноябрь','Декабрь']
+%>
+
+<table id="wp-calendar">
+  <caption><%= month[Date.today.month] %> <%= Date.today.year %></caption>
+  <thead>
+  <tr>
+    <% week_days_abbr_ordered.each do |day| %>
+      <th scope="col"><%= day %></th>
+    <% end %>
+  </tr>
+  </thead>
+  <% month_table(Time.zone.now).each do |week| %>
+    <tr>
+      <% week.each do |day| %>
+        <td><%= day %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

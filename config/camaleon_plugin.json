@@ -1,0 +1,14 @@
+{
+  "title": "Calendar",
+  "descr": "Display posts from the selected content category in a nice calendar view.",
+  "key": "calendar",
+  "helpers": [
+    "Plugins::Calendar::MainHelper"
+  ],
+  "hooks": {
+    "on_active": ["calendar_on_active"],
+    "on_inactive": ["calendar_on_inactive"],
+    "plugin_options": ["calendar_on_plugin_options"],
+    "app_before_load": ["calendar_shortcodes"]
+  }
+}
