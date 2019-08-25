@@ -98,9 +98,7 @@
               <h3 class="gdlr-widget-title">Свежие записи</h3>
               <div class="clear"></div>
               <ul>
-                <% current_site.the_contents(@post_type.slug).order(created_at: :desc).limit(7).decorate.each do |p| %>
-                  <li><a href="<%= p.the_url %>"><%= p.the_title %></a></li>
-                <% end %>
+
               </ul>
             </div>
           </div>
