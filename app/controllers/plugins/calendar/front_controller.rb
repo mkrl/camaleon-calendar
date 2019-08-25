@@ -1,7 +1,7 @@
 class Plugins::Calendar::FrontController < CamaleonCms::Apps::PluginsFrontController
   include Plugins::Calendar::MainHelper
   def index
-    @date = parse_params
+    @posts = parse_params
   end
 
   private
